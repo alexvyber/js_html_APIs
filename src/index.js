@@ -11,12 +11,16 @@ for (const el in myDivs) {
 
 root.innerHTML = `
 <main class="dnd-wrapper">
+    <h1>Elements</h1>
     ${htmlDivs}
-    <div class="zone">here</div>
+    <div class="zone">DropZone</div>
 </main>
     `;
 
 const init = () => {
+  // Prevent default drag and drop within the document
+  document.addEventListener("dragover", (e) => e.preventDefault());
+  document.addEventListener("drop", (e) => e.preventDefault());
   const drags = Array.from(document.querySelectorAll(".drag"));
   drags.map((drag) =>
     drag.addEventListener("dragstart", (e) => {
@@ -38,6 +42,7 @@ const init = () => {
   dropzone.addEventListener("drop", (e) => {
     e.preventDefault();
     e.stopPropagation();
+
     const id = e.dataTransfer.getData("text/plain");
     const element = document.getElementById(id);
     dropzone.append(element);

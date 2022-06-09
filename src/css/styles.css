@@ -36,3 +36,23 @@ body {
   background: #eeffee;
   border-color: #aaffaa;
 }
+
+.image-preview {
+  margin: 20px auto;
+  background: #f8f8f8;
+  min-height: 50px;
+  border: 2px dotted #dedede;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+gap: 30px 30px;
+}
+
+.image-preview-item {
+  max-width: 320px;
+width: 100%;
+  border-radius: 8px;
+box-shadow: 4px 9px 38px -2px rgba(34, 60, 80, 0.17);
+}
