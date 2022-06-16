@@ -6,14 +6,12 @@ root.innerHTML = `
     <h1>Image Uploader</h1>
     <h4>Accepts only .jpg, .png, .svg files</h4>
 
-    <form>
 
     <label for="file-input">
     File
-</label>
+    </label>
     <input type="file" id="file-input" class="file-input" accept="image/*" multiple>
 
-    </form>
 
     <div id="image-zone" class="zone">DropZone</div>
     <section id="image-preview" class="image-preview"></section>
@@ -70,7 +68,7 @@ const init = () => {
     // console.log(form)
     //   console.log([...form.entries()])
 
-    const request = await fetch("http://localhost:5400/upload", {
+    const request = await fetch("http://localhost:4300/upload", {
       method: "POST",
       body: form,
     });
