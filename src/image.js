@@ -33,7 +33,7 @@ const init = () => {
 
   // Image preview
   const showFilePreview = (file) => {
-      // uploader(file)
+    // uploader(file)
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.addEventListener("load", (e) => {
@@ -73,7 +73,7 @@ const init = () => {
       body: form,
     });
 
-    return await (request.json());
+    return await request.json();
   };
 
   const handleFileUpload = async (files) => {
@@ -86,7 +86,7 @@ const init = () => {
     filesToUpload.map((f) => showFilePreview(f));
 
     const uploaded = await uploadFiles(filesToUpload);
-      uploaded && console.log(uploaded.images)
+    uploaded && console.log(uploaded.images);
   };
 
   dropzone.addEventListener("dragenter", (e) => {
@@ -107,7 +107,7 @@ const init = () => {
 
     e.target.classList.remove("active");
   });
-    files.addEventListener("change", e => handleFileUpload(e.target.files))
+  files.addEventListener("change", (e) => handleFileUpload(e.target.files));
 };
 
 // Check if element has draggable property in it
